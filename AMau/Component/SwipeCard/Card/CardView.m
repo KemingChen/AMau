@@ -8,7 +8,7 @@
 
 #define ACTION_MARGIN 120
 #define SCALE_STRENGTH 4
-#define SCALE_MAX .93
+#define SCALE_MAX 1
 #define ROTATION_MAX 1
 #define ROTATION_STRENGTH 320
 #define ROTATION_ANGLE M_PI / 8
@@ -27,6 +27,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setup];
+        self.likeImageView.hidden = YES;
+        self.dislikeImageView.hidden = YES;
+        self.mode = CGOverlayViewModeCenter;
     }
     return self;
 }
@@ -35,11 +38,15 @@
 {
     UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(beingDragged:)];
     [self addGestureRecognizer:panGesture];
-    
+
     self.layer.cornerRadius = 8;
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowOffset = CGSizeMake(1, 1);
+}
+
+- (void)assignData
+{
 }
 
 - (void)beingDragged:(UIPanGestureRecognizer*)gestureRecognizer
@@ -54,19 +61,19 @@
     };
 
     case UIGestureRecognizerStateChanged: {
-        CGFloat rotationStrength = MIN(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
-
-        CGFloat rotationAngel = (CGFloat)(ROTATION_ANGLE * rotationStrength);
-
-        CGFloat scale = MAX(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
+        //        CGFloat rotationStrength = MIN(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
+        //
+        //        CGFloat rotationAngel = (CGFloat)(ROTATION_ANGLE * rotationStrength);
+        //
+        //        CGFloat scale = MAX(1 - fabsf(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
 
         self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter);
 
-        CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel);
-
-        CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
-
-        self.transform = scaleTransform;
+        //        CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel);
+        //
+        //        CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
+        //
+        //        self.transform = scaleTransform;
         [self updateOverlay:xFromCenter];
 
         break;
@@ -86,11 +93,15 @@
 
 - (void)updateOverlay:(CGFloat)distance
 {
-    if (distance > 0) {
+    NSLog(@"%f", distance);
+    if (distance > 20) {
         self.mode = GGOverlayViewModeRight;
     }
-    else {
+    else if (distance < -20) {
         self.mode = GGOverlayViewModeLeft;
+    }
+    else {
+        self.mode = CGOverlayViewModeCenter;
     }
 }
 
@@ -152,12 +163,16 @@
     _mode = mode;
 
     if (mode == GGOverlayViewModeLeft) {
-        self.dislikeImageView.hidden = FALSE;
-        self.likeImageView.hidden = TRUE;
+        self.dislikeImageView.hidden = NO;
+        self.likeImageView.hidden = YES;
     }
     else {
-        self.dislikeImageView.hidden = TRUE;
-        self.likeImageView.hidden = FALSE;
+        self.dislikeImageView.hidden = YES;
+        self.likeImageView.hidden = NO;
+    }
+    if (mode == CGOverlayViewModeCenter) {
+        self.dislikeImageView.hidden = YES;
+        self.likeImageView.hidden = YES;
     }
 }
 

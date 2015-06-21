@@ -10,6 +10,4 @@
 
 @interface PSCustomViewFromXib : UIView
 
-@property (nonatomic, strong) PSCustomViewFromXib *customView;
-
 @end
