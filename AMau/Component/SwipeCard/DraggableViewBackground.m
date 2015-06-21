@@ -11,11 +11,6 @@
 @implementation DraggableViewBackground {
     NSInteger cardsLoadedIndex;
     NSMutableArray* loadedCards;
-
-    UIButton* menuButton;
-    UIButton* messageButton;
-    UIButton* checkButton;
-    UIButton* xButton;
 }
 
 static const int MAX_BUFFER_SIZE = 2;
@@ -30,7 +25,6 @@ static const float CARD_WIDTH = 290;
     self = [super initWithFrame:frame];
     if (self) {
         [super layoutSubviews];
-        [self setupView];
         exampleCardLabels = [[NSArray alloc] initWithObjects:@"first", @"second", @"third", @"fourth", @"last", nil];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
@@ -38,25 +32,6 @@ static const float CARD_WIDTH = 290;
         [self loadCards];
     }
     return self;
-}
-
-- (void)setupView
-{
-    self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1];
-    menuButton = [[UIButton alloc] initWithFrame:CGRectMake(17, 34, 22, 15)];
-    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
-    messageButton = [[UIButton alloc] initWithFrame:CGRectMake(284, 34, 18, 18)];
-    [messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
-    xButton = [[UIButton alloc] initWithFrame:CGRectMake(60, 485, 59, 59)];
-    [xButton setImage:[UIImage imageNamed:@"xButton"] forState:UIControlStateNormal];
-    [xButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
-    checkButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 485, 59, 59)];
-    [checkButton setImage:[UIImage imageNamed:@"checkButton"] forState:UIControlStateNormal];
-    [checkButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:menuButton];
-    [self addSubview:messageButton];
-    [self addSubview:xButton];
-    [self addSubview:checkButton];
 }
 
 - (DraggableView*)createDraggableViewWithDataAtIndex:(NSInteger)index
