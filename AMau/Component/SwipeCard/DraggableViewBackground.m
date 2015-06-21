@@ -11,11 +11,10 @@
 @implementation DraggableViewBackground {
     NSInteger cardsLoadedIndex;
     NSMutableArray* loadedCards;
+    CGRect cardBaseFrame;
 }
 
 static const int MAX_BUFFER_SIZE = 5;
-static const float CARD_HEIGHT = 200;
-static const float CARD_WIDTH = 200;
 
 @synthesize exampleCardLabels;
 @synthesize allCards;
@@ -23,12 +22,14 @@ static const float CARD_WIDTH = 200;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    cardBaseFrame = frame;
     if (self) {
         [super layoutSubviews];
         exampleCardLabels = [[NSArray alloc] initWithObjects:@"first", @"second", @"third", @"fourth", @"last", nil];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
+        
         [self loadCards];
     }
     return self;
@@ -38,16 +39,16 @@ static const float CARD_WIDTH = 200;
 {
     if ([exampleCardLabels count] > 0) {
         NSInteger numLoadedCardsCap = (([exampleCardLabels count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : [exampleCardLabels count]);
-        
+
         for (int i = 0; i < [exampleCardLabels count]; i++) {
-            DraggableView* newCard = [self createDraggableViewWithDataAtIndex:i];
+            CardView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
-            
+
             if (i < numLoadedCardsCap) {
                 [loadedCards addObject:newCard];
             }
         }
-        
+
         for (int i = 0; i < [loadedCards count]; i++) {
             if (i > 0) {
                 [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i - 1]];
@@ -60,12 +61,11 @@ static const float CARD_WIDTH = 200;
     }
 }
 
-- (DraggableView*)createDraggableViewWithDataAtIndex:(NSInteger)index
+- (CardView*)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    DraggableView* draggableView = [[DraggableView alloc] initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH) / 2, (self.frame.size.height - CARD_HEIGHT) / 2, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index];
-    draggableView.delegate = self;
-    return draggableView;
+    CardView* cardView = [[CardView alloc] init];
+    cardView.center = CGPointMake(0, 0);
+    return cardView;
 }
 
 - (void)cardSwipedLeft:(UIView*)card;
@@ -92,24 +92,24 @@ static const float CARD_WIDTH = 200;
 
 - (void)swipeRight
 {
-    DraggableView* dragView = [loadedCards firstObject];
-    dragView.cardView.mode = GGOverlayViewModeRight;
+    CardView* cardView = [loadedCards firstObject];
+    cardView.mode = GGOverlayViewModeRight;
     [UIView animateWithDuration:0.2
                      animations:^{
-                         dragView.cardView.alpha = 1;
+                         cardView.alpha = 1;
                      }];
-    [dragView rightClickAction];
+    [cardView rightClickAction];
 }
 
 - (void)swipeLeft
 {
-    DraggableView* dragView = [loadedCards firstObject];
-    dragView.cardView.mode = GGOverlayViewModeLeft;
+    CardView* cardView = [loadedCards firstObject];
+    cardView.mode = GGOverlayViewModeLeft;
     [UIView animateWithDuration:0.2
                      animations:^{
-                         dragView.cardView.alpha = 1;
+                         cardView.alpha = 1;
                      }];
-    [dragView leftClickAction];
+    [cardView leftClickAction];
 }
 
 @end

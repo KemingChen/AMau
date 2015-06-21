@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSCustomViewFromXib.h"
 
-typedef NS_ENUM(NSUInteger , GGOverlayViewMode) {
+@protocol DraggableViewDelegate <NSObject>
+
+- (void)cardSwipedLeft:(UIView*)card;
+- (void)cardSwipedRight:(UIView*)card;
+
+@end
+
+typedef NS_ENUM(NSUInteger, GGOverlayViewMode) {
     GGOverlayViewModeLeft,
     GGOverlayViewModeRight
 };
 
-@interface CardView : UIView
+@interface CardView : PSCustomViewFromXib
 
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView* photoImageView;
@@ -21,9 +29,15 @@ typedef NS_ENUM(NSUInteger , GGOverlayViewMode) {
 @property (weak, nonatomic) IBOutlet UILabel* nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel* liveLabel;
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *likeImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *dislikeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView* likeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView* dislikeImageView;
 
+@property (weak) id<DraggableViewDelegate> delegate;
 @property (nonatomic) GGOverlayViewMode mode;
+
+@property (nonatomic) CGPoint originalPoint;
+
+- (void)leftClickAction;
+- (void)rightClickAction;
 
 @end

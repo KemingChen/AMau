@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DraggableView.h"
+#import "CardView.h"
 
 @interface DraggableViewBackground : UIView <DraggableViewDelegate>
 
