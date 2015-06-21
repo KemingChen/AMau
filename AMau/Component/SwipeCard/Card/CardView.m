@@ -28,10 +28,8 @@
     if (self) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
         self.frame = frame;
-        
+
         [self setup];
-        self.likeImageView.hidden = YES;
-        self.dislikeImageView.hidden = YES;
         self.mode = CGOverlayViewModeCenter;
     }
     return self;
@@ -46,6 +44,9 @@
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.2;
     self.layer.shadowOffset = CGSizeMake(1, 1);
+
+    self.likeImageView.hidden = YES;
+    self.dislikeImageView.hidden = YES;
 }
 
 - (void)assignData
@@ -96,7 +97,6 @@
 
 - (void)updateOverlay:(CGFloat)distance
 {
-    NSLog(@"%f", distance);
     if (distance > 20) {
         self.mode = GGOverlayViewModeRight;
     }
@@ -116,11 +116,12 @@
     else if (xFromCenter < -ACTION_MARGIN) {
         [self leftAction];
     }
-    else { //%%% resets the card
+    else {
         [UIView animateWithDuration:0.3
                          animations:^{
                              self.center = self.originalPoint;
                              self.transform = CGAffineTransformMakeRotation(0);
+                             [self setMode:CGOverlayViewModeCenter];
                          }];
     }
 }
