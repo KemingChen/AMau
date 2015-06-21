@@ -24,7 +24,7 @@
 
 @synthesize panGestureRecognizer;
 @synthesize information;
-@synthesize overlayView;
+@synthesize cardView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -44,9 +44,9 @@
         [self addGestureRecognizer:panGestureRecognizer];
         [self addSubview:information];
 
-        overlayView = [[OverlayView alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 100, 0, 100, 100)];
-        overlayView.alpha = 0;
-        [self addSubview:overlayView];
+        cardView = [[CardView alloc] initWithFrame:frame];
+        cardView.alpha = 0;
+        [self addSubview:cardView];
     }
     return self;
 }
@@ -104,13 +104,13 @@
 - (void)updateOverlay:(CGFloat)distance
 {
     if (distance > 0) {
-        overlayView.mode = GGOverlayViewModeRight;
+        cardView.mode = GGOverlayViewModeRight;
     }
     else {
-        overlayView.mode = GGOverlayViewModeLeft;
+        cardView.mode = GGOverlayViewModeLeft;
     }
 
-    overlayView.alpha = MIN(fabs(distance) / 100, 0.4);
+    cardView.alpha = MIN(fabs(distance) / 100, 0.4);
 }
 
 - (void)afterSwipeAction
@@ -126,7 +126,7 @@
                          animations:^{
                              self.center = self.originalPoint;
                              self.transform = CGAffineTransformMakeRotation(0);
-                             overlayView.alpha = 0;
+                             cardView.alpha = 0;
                          }];
     }
 }

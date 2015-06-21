@@ -11,7 +11,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CardView">
             <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -64,6 +64,15 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rme-we-UIH" userLabel="DislikeImage">
+                    <rect key="frame" x="192" y="48" width="100" height="60"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-fk-DaX" userLabel="LikeImage">
+                    <rect key="frame" x="8" y="48" width="100" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="WZZ-NI-UKI"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -76,6 +85,8 @@
                 <constraint firstItem="B8C-qG-uPy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Lx7-wo-u3y"/>
                 <constraint firstAttribute="trailing" secondItem="B8C-qG-uPy" secondAttribute="trailing" constant="8" id="Sx9-ht-TlT"/>
                 <constraint firstItem="bSs-GK-M8T" firstAttribute="width" secondItem="z2X-tr-gjl" secondAttribute="width" multiplier="0.6" id="Tae-NU-xFe"/>
+                <constraint firstItem="rme-we-UIH" firstAttribute="trailing" secondItem="z2X-tr-gjl" secondAttribute="trailing" constant="-8" id="XjR-LN-lbK"/>
+                <constraint firstItem="z2X-tr-gjl" firstAttribute="top" secondItem="bRk-fk-DaX" secondAttribute="top" constant="-8" id="Yr1-6k-gGo"/>
                 <constraint firstAttribute="trailing" secondItem="z2X-tr-gjl" secondAttribute="trailing" id="b9H-RJ-Y4X"/>
                 <constraint firstItem="bSs-GK-M8T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="bVy-DH-IUK"/>
                 <constraint firstAttribute="trailing" secondItem="N9l-T5-R1s" secondAttribute="trailing" id="bcb-Nx-f92"/>
@@ -84,12 +95,27 @@
                 <constraint firstItem="N9l-T5-R1s" firstAttribute="leading" secondItem="z2X-tr-gjl" secondAttribute="leading" id="eH9-sY-1Oo"/>
                 <constraint firstItem="z2X-tr-gjl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="foI-Oa-wTD"/>
                 <constraint firstItem="bSs-GK-M8T" firstAttribute="top" secondItem="z2X-tr-gjl" secondAttribute="bottom" constant="8" id="ill-9F-Ulo"/>
+                <constraint firstItem="z2X-tr-gjl" firstAttribute="width" secondItem="bRk-fk-DaX" secondAttribute="width" multiplier="3" id="jcq-ey-1bM"/>
+                <constraint firstItem="rme-we-UIH" firstAttribute="top" secondItem="z2X-tr-gjl" secondAttribute="top" constant="8" id="lZ3-JL-KvU"/>
                 <constraint firstItem="B8C-qG-uPy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="pDk-RG-7BX"/>
+                <constraint firstItem="z2X-tr-gjl" firstAttribute="leading" secondItem="bRk-fk-DaX" secondAttribute="leading" constant="-8" id="pzH-hU-znm"/>
+                <constraint firstItem="rme-we-UIH" firstAttribute="width" secondItem="bRk-fk-DaX" secondAttribute="width" id="rBg-Jq-EAj"/>
                 <constraint firstItem="N9l-T5-R1s" firstAttribute="top" secondItem="z2X-tr-gjl" secondAttribute="top" id="shv-pb-pFv"/>
+                <constraint firstItem="rme-we-UIH" firstAttribute="height" secondItem="bRk-fk-DaX" secondAttribute="height" id="ukT-bP-Feq"/>
                 <constraint firstAttribute="trailing" secondItem="dwC-tU-Utn" secondAttribute="trailing" constant="8" id="yvv-fP-O8d"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="305" y="656"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="dwC-tU-Utn" id="sYi-Hy-31R"/>
+                <outlet property="dislikeImageView" destination="rme-we-UIH" id="yXt-k5-3yG"/>
+                <outlet property="likeImageView" destination="bRk-fk-DaX" id="Bkg-Lb-2gk"/>
+                <outlet property="liveLabel" destination="JaB-nm-d2Y" id="SWo-iM-CnN"/>
+                <outlet property="locationLabel" destination="N9l-T5-R1s" id="Pbf-ZL-49T"/>
+                <outlet property="nameLabel" destination="bSs-GK-M8T" id="nka-WB-DzL"/>
+                <outlet property="photoImageView" destination="z2X-tr-gjl" id="hKU-YA-Dqb"/>
+                <outlet property="titleLabel" destination="B8C-qG-uPy" id="ffA-1M-2bt"/>
+            </connections>
+            <point key="canvasLocation" x="397" y="415"/>
         </view>
     </objects>
 </document>

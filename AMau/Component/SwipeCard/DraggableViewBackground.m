@@ -93,10 +93,10 @@ static const float CARD_WIDTH = 200;
 - (void)swipeRight
 {
     DraggableView* dragView = [loadedCards firstObject];
-    dragView.overlayView.mode = GGOverlayViewModeRight;
+    dragView.cardView.mode = GGOverlayViewModeRight;
     [UIView animateWithDuration:0.2
                      animations:^{
-                         dragView.overlayView.alpha = 1;
+                         dragView.cardView.alpha = 1;
                      }];
     [dragView rightClickAction];
 }
@@ -104,10 +104,10 @@ static const float CARD_WIDTH = 200;
 - (void)swipeLeft
 {
     DraggableView* dragView = [loadedCards firstObject];
-    dragView.overlayView.mode = GGOverlayViewModeLeft;
+    dragView.cardView.mode = GGOverlayViewModeLeft;
     [UIView animateWithDuration:0.2
                      animations:^{
-                         dragView.overlayView.alpha = 1;
+                         dragView.cardView.alpha = 1;
                      }];
     [dragView leftClickAction];
 }
