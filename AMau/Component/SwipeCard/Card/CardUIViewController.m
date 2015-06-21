@@ -1,0 +1,37 @@
+//
+//  CardUIViewController.m
+//  AMau
+//
+//  Created by Keming on 2015/6/21.
+//  Copyright (c) 2015年 NTUT-IOS. All rights reserved.
+//
+
+#import "CardUIViewController.h"
+
+@interface CardUIViewController ()
+
+@end
+
+@implementation CardUIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

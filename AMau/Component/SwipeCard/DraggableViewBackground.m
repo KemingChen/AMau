@@ -13,9 +13,9 @@
     NSMutableArray* loadedCards;
 }
 
-static const int MAX_BUFFER_SIZE = 2;
-static const float CARD_HEIGHT = 386;
-static const float CARD_WIDTH = 290;
+static const int MAX_BUFFER_SIZE = 5;
+static const float CARD_HEIGHT = 200;
+static const float CARD_WIDTH = 200;
 
 @synthesize exampleCardLabels;
 @synthesize allCards;
@@ -34,28 +34,20 @@ static const float CARD_WIDTH = 290;
     return self;
 }
 
-- (DraggableView*)createDraggableViewWithDataAtIndex:(NSInteger)index
-{
-    DraggableView* draggableView = [[DraggableView alloc] initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH) / 2, (self.frame.size.height - CARD_HEIGHT) / 2, CARD_WIDTH, CARD_HEIGHT)];
-    draggableView.information.text = [exampleCardLabels objectAtIndex:index];
-    draggableView.delegate = self;
-    return draggableView;
-}
-
 - (void)loadCards
 {
     if ([exampleCardLabels count] > 0) {
         NSInteger numLoadedCardsCap = (([exampleCardLabels count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : [exampleCardLabels count]);
-
+        
         for (int i = 0; i < [exampleCardLabels count]; i++) {
             DraggableView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
-
+            
             if (i < numLoadedCardsCap) {
                 [loadedCards addObject:newCard];
             }
         }
-
+        
         for (int i = 0; i < [loadedCards count]; i++) {
             if (i > 0) {
                 [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i - 1]];
@@ -66,6 +58,14 @@ static const float CARD_WIDTH = 290;
             cardsLoadedIndex++;
         }
     }
+}
+
+- (DraggableView*)createDraggableViewWithDataAtIndex:(NSInteger)index
+{
+    DraggableView* draggableView = [[DraggableView alloc] initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH) / 2, (self.frame.size.height - CARD_HEIGHT) / 2, CARD_WIDTH, CARD_HEIGHT)];
+    draggableView.information.text = [exampleCardLabels objectAtIndex:index];
+    draggableView.delegate = self;
+    return draggableView;
 }
 
 - (void)cardSwipedLeft:(UIView*)card;

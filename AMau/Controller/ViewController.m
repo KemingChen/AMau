@@ -18,6 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    CGRect frame = self.baseCard.frame;
+    DraggableViewBackground* draggableBackground = [[DraggableViewBackground alloc] initWithFrame:frame];
+    [self.mainContainer addSubview:draggableBackground];
 }
 
 - (void)didReceiveMemoryWarning

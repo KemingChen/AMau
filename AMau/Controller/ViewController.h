@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView* mainContainer;
 @property (weak, nonatomic) IBOutlet UIButton* favoriteListButton;
+@property (weak, nonatomic) IBOutlet UIView *baseCard;
 
 @end

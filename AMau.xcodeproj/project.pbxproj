@@ -18,6 +18,8 @@
 		7FD599DD1B36DFB20033D53D /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599D81B36DFB20033D53D /* DraggableView.m */; };
 		7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */; };
 		7FD599DF1B36DFB20033D53D /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DC1B36DFB20033D53D /* OverlayView.m */; };
+		7FD599E81B36ECC60033D53D /* CardUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599E61B36ECC60033D53D /* CardUIViewController.m */; };
+		7FD599E91B36ECC60033D53D /* CardUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD599E71B36ECC60033D53D /* CardUIViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableViewBackground.m; sourceTree = "<group>"; };
 		7FD599DB1B36DFB20033D53D /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		7FD599DC1B36DFB20033D53D /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		7FD599E51B36ECC60033D53D /* CardUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardUIViewController.h; path = Card/CardUIViewController.h; sourceTree = "<group>"; };
+		7FD599E61B36ECC60033D53D /* CardUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardUIViewController.m; path = Card/CardUIViewController.m; sourceTree = "<group>"; };
+		7FD599E71B36ECC60033D53D /* CardUIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardUIViewController.xib; path = Card/CardUIViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +156,7 @@
 		7FD599D61B36DFB20033D53D /* SwipeCard */ = {
 			isa = PBXGroup;
 			children = (
+				7FD599E01B36EB6E0033D53D /* Card */,
 				7FD599D71B36DFB20033D53D /* DraggableView.h */,
 				7FD599D81B36DFB20033D53D /* DraggableView.m */,
 				7FD599D91B36DFB20033D53D /* DraggableViewBackground.h */,
@@ -159,6 +165,16 @@
 				7FD599DC1B36DFB20033D53D /* OverlayView.m */,
 			);
 			path = SwipeCard;
+			sourceTree = "<group>";
+		};
+		7FD599E01B36EB6E0033D53D /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				7FD599E51B36ECC60033D53D /* CardUIViewController.h */,
+				7FD599E61B36ECC60033D53D /* CardUIViewController.m */,
+				7FD599E71B36ECC60033D53D /* CardUIViewController.xib */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD599E91B36ECC60033D53D /* CardUIViewController.xib in Resources */,
 				7FD599B61B36D8500033D53D /* Main.storyboard in Resources */,
 				7FD599BB1B36D8500033D53D /* LaunchScreen.xib in Resources */,
 				7FD599B81B36D8500033D53D /* Images.xcassets in Resources */,
@@ -261,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD599E81B36ECC60033D53D /* CardUIViewController.m in Sources */,
 				7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */,
 				7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */,
 				7FD599DF1B36DFB20033D53D /* OverlayView.m in Sources */,
