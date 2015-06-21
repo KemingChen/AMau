@@ -15,6 +15,9 @@
 		7FD599BB1B36D8500033D53D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD599B91B36D8500033D53D /* LaunchScreen.xib */; };
 		7FD599C71B36D8500033D53D /* AMauTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599C61B36D8500033D53D /* AMauTests.m */; };
 		7FD599D41B36D91C0033D53D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599D31B36D91C0033D53D /* ViewController.m */; };
+		7FD599DD1B36DFB20033D53D /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599D81B36DFB20033D53D /* DraggableView.m */; };
+		7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */; };
+		7FD599DF1B36DFB20033D53D /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DC1B36DFB20033D53D /* OverlayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 		7FD599C61B36D8500033D53D /* AMauTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMauTests.m; sourceTree = "<group>"; };
 		7FD599D21B36D91C0033D53D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7FD599D31B36D91C0033D53D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7FD599D71B36DFB20033D53D /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
+		7FD599D81B36DFB20033D53D /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
+		7FD599D91B36DFB20033D53D /* DraggableViewBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableViewBackground.h; sourceTree = "<group>"; };
+		7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableViewBackground.m; sourceTree = "<group>"; };
+		7FD599DB1B36DFB20033D53D /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		7FD599DC1B36DFB20033D53D /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,7 @@
 		7FD599A61B36D8500033D53D /* AMau */ = {
 			isa = PBXGroup;
 			children = (
+				7FD599D51B36DFB20033D53D /* Component */,
 				7FD599D11B36D91C0033D53D /* Controller */,
 				7FD599AB1B36D8500033D53D /* AppDelegate.h */,
 				7FD599AC1B36D8500033D53D /* AppDelegate.m */,
@@ -128,6 +138,27 @@
 				7FD599D31B36D91C0033D53D /* ViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7FD599D51B36DFB20033D53D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				7FD599D61B36DFB20033D53D /* SwipeCard */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		7FD599D61B36DFB20033D53D /* SwipeCard */ = {
+			isa = PBXGroup;
+			children = (
+				7FD599D71B36DFB20033D53D /* DraggableView.h */,
+				7FD599D81B36DFB20033D53D /* DraggableView.m */,
+				7FD599D91B36DFB20033D53D /* DraggableViewBackground.h */,
+				7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */,
+				7FD599DB1B36DFB20033D53D /* OverlayView.h */,
+				7FD599DC1B36DFB20033D53D /* OverlayView.m */,
+			);
+			path = SwipeCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,10 +261,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */,
 				7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */,
+				7FD599DF1B36DFB20033D53D /* OverlayView.m in Sources */,
 				7FD599AD1B36D8500033D53D /* AppDelegate.m in Sources */,
 				7FD599D41B36D91C0033D53D /* ViewController.m in Sources */,
 				7FD599AA1B36D8500033D53D /* main.m in Sources */,
+				7FD599DD1B36DFB20033D53D /* DraggableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

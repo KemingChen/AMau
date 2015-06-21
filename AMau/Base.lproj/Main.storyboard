@@ -77,6 +77,10 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="favoriteListButton" destination="S3Q-bu-G4D" id="EkZ-gf-Qcw"/>
+                        <outlet property="mainContainer" destination="eJ1-m8-cnc" id="ulI-6n-sIW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

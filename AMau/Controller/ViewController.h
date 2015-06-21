@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView* mainContainer;
+@property (weak, nonatomic) IBOutlet UIButton* favoriteListButton;
 
 @end
-
