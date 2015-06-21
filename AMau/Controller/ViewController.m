@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "DraggableViewBackground.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    DraggableViewBackground* draggableBackground;
+}
 
 @end
 
@@ -21,14 +23,30 @@
 
     [self.view layoutIfNeeded];
     CGRect frame = self.mainContainer.frame;
-    NSLog(@"%f %f %f %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
-    DraggableViewBackground* draggableBackground = [[DraggableViewBackground alloc] initWithFrame:frame];
+    draggableBackground = [[DraggableViewBackground alloc] initWithFrame:frame];
     [self.mainContainer addSubview:draggableBackground];
+    [self.mainContainer bringSubviewToFront:self.likeButton];
+    [self.mainContainer bringSubviewToFront:self.dislikeButton];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)clickFavoriteListButton:(id)sender
+{
+    NSLog(@"Favorite");
+}
+
+- (IBAction)clickLikeButton:(id)sender
+{
+    [draggableBackground swipeRight];
+}
+
+- (IBAction)clickDislikeButton:(id)sender
+{
+    [draggableBackground swipeLeft];
 }
 
 @end

@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView* mainContainer;
 @property (weak, nonatomic) IBOutlet UIButton* favoriteListButton;
-@property (weak, nonatomic) IBOutlet UIView *baseCard;
+- (IBAction)clickDislikeButton:(id)sender;
+- (IBAction)clickLikeButton:(id)sender;
+- (IBAction)clickFavoriteListButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *dislikeButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @end

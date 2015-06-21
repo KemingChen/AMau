@@ -11,11 +11,10 @@
 
 @interface DraggableViewBackground : UIView <DraggableViewDelegate>
 
--(void)cardSwipedLeft:(UIView *)card;
--(void)cardSwipedRight:(UIView *)card;
-
 @property (retain,nonatomic)NSArray* exampleCardLabels;
 @property (retain,nonatomic)NSMutableArray* allCards;
 
+- (void)swipeRight;
+- (void)swipeLeft;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #define CARD_WIDTH 270
-#define CARD_HEIGHT 320
+#define CARD_HEIGHT 350
 
 #import "DraggableViewBackground.h"
 
