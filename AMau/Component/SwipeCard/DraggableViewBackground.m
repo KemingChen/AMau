@@ -6,6 +6,9 @@
 //  Copyright (c) 2015年 NTUT-IOS. All rights reserved.
 //
 
+#define CARD_WIDTH 270
+#define CARD_HEIGHT 320
+
 #import "DraggableViewBackground.h"
 
 @implementation DraggableViewBackground {
@@ -14,7 +17,7 @@
     CGRect mainFrame;
 }
 
-static const int MAX_BUFFER_SIZE = 5;
+static const int MAX_BUFFER_SIZE = 2;
 
 @synthesize exampleCardLabels;
 @synthesize allCards;
@@ -29,7 +32,7 @@ static const int MAX_BUFFER_SIZE = 5;
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         cardsLoadedIndex = 0;
-        
+
         [self loadCards];
     }
     return self;
@@ -63,8 +66,7 @@ static const int MAX_BUFFER_SIZE = 5;
 
 - (CardView*)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    [cardView layoutIfNeeded];
+    CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake((mainFrame.size.width - CARD_WIDTH) / 2.0f, 20 - mainFrame.origin.y, CARD_WIDTH, CARD_HEIGHT)];
     return cardView;
 }
 

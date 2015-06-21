@@ -75,10 +75,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OS2-bp-pzi" userLabel="BaseCard">
-                                        <rect key="frame" x="50" y="50" width="220" height="276"/>
-                                        <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-LU-FcJ" userLabel="DislikeButton">
                                         <rect key="frame" x="180" y="379" width="80" height="69"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,15 +84,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="OS2-bp-pzi" secondAttribute="trailing" constant="50" id="1To-ax-ZOM"/>
-                                    <constraint firstItem="gyS-I7-tdd" firstAttribute="top" secondItem="OS2-bp-pzi" secondAttribute="bottom" constant="53" id="4aG-KN-w0d"/>
                                     <constraint firstItem="gyS-I7-tdd" firstAttribute="width" secondItem="9MR-LU-FcJ" secondAttribute="width" id="Bvz-it-tmP"/>
-                                    <constraint firstItem="OS2-bp-pzi" firstAttribute="leading" secondItem="eJ1-m8-cnc" secondAttribute="leading" constant="50" id="Kip-Jd-NMh"/>
                                     <constraint firstAttribute="bottom" secondItem="9MR-LU-FcJ" secondAttribute="bottom" constant="50" id="L78-Z6-fuu"/>
                                     <constraint firstAttribute="bottom" secondItem="gyS-I7-tdd" secondAttribute="bottom" constant="50" id="RuL-Dt-MjW"/>
                                     <constraint firstItem="gyS-I7-tdd" firstAttribute="leading" secondItem="eJ1-m8-cnc" secondAttribute="leading" constant="60" id="bii-Ww-izg"/>
                                     <constraint firstAttribute="trailing" secondItem="9MR-LU-FcJ" secondAttribute="trailing" constant="60" id="dK0-lv-sde"/>
-                                    <constraint firstItem="OS2-bp-pzi" firstAttribute="top" secondItem="eJ1-m8-cnc" secondAttribute="top" constant="50" id="fz9-Iv-BxS"/>
                                     <constraint firstItem="gyS-I7-tdd" firstAttribute="height" secondItem="9MR-LU-FcJ" secondAttribute="height" id="tRF-He-MkW"/>
                                 </constraints>
                             </view>
@@ -114,7 +106,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="baseCard" destination="OS2-bp-pzi" id="kfH-bp-8t9"/>
                         <outlet property="favoriteListButton" destination="S3Q-bu-G4D" id="EkZ-gf-Qcw"/>
                         <outlet property="mainContainer" destination="eJ1-m8-cnc" id="ulI-6n-sIW"/>
                     </connections>
