@@ -128,7 +128,7 @@
         </view>
     </objects>
     <resources>
-        <image name="slide_dislike" width="109" height="50"/>
-        <image name="slide_like" width="109" height="50"/>
+        <image name="slide_dislike" width="105" height="57"/>
+        <image name="slide_like" width="105" height="57"/>
     </resources>
 </document>

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSCustomViewFromXib.h"
 
 @protocol DraggableViewDelegate <NSObject>
 
@@ -22,7 +21,7 @@ typedef NS_ENUM(NSUInteger, GGOverlayViewMode) {
     GGOverlayViewModeRight
 };
 
-@interface CardView : PSCustomViewFromXib
+@interface CardView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView* photoImageView;

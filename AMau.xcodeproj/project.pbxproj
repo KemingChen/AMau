@@ -18,7 +18,6 @@
 		7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */; };
 		7FD599EB1B36F2260033D53D /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD599EA1B36F2260033D53D /* CardView.xib */; };
 		7FD599EE1B36F25A0033D53D /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599ED1B36F25A0033D53D /* CardView.m */; };
-		7FD599F11B36FBC70033D53D /* PSCustomViewFromXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599F01B36FBC70033D53D /* PSCustomViewFromXib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +50,6 @@
 		7FD599EA1B36F2260033D53D /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = Card/CardView.xib; sourceTree = "<group>"; };
 		7FD599EC1B36F25A0033D53D /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Card/CardView.h; sourceTree = "<group>"; };
 		7FD599ED1B36F25A0033D53D /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Card/CardView.m; sourceTree = "<group>"; };
-		7FD599EF1B36FBC70033D53D /* PSCustomViewFromXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCustomViewFromXib.h; sourceTree = "<group>"; };
-		7FD599F01B36FBC70033D53D /* PSCustomViewFromXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCustomViewFromXib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				7FD599D61B36DFB20033D53D /* SwipeCard */,
-				7FD599EF1B36FBC70033D53D /* PSCustomViewFromXib.h */,
-				7FD599F01B36FBC70033D53D /* PSCustomViewFromXib.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -273,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD599F11B36FBC70033D53D /* PSCustomViewFromXib.m in Sources */,
 				7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */,
 				7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */,
 				7FD599EE1B36F25A0033D53D /* CardView.m in Sources */,

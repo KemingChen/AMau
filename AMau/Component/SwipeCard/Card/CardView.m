@@ -26,6 +26,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self = [[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+        self.frame = frame;
+        
         [self setup];
         self.likeImageView.hidden = YES;
         self.dislikeImageView.hidden = YES;
