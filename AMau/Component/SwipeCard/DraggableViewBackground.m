@@ -67,6 +67,7 @@ static const int MAX_BUFFER_SIZE = 2;
 - (CardView*)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake((mainFrame.size.width - CARD_WIDTH) / 2.0f, 20 - mainFrame.origin.y, CARD_WIDTH, CARD_HEIGHT)];
+    cardView.delegate = self;
     return cardView;
 }
 

@@ -35,6 +35,11 @@
 {
     UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(beingDragged:)];
     [self addGestureRecognizer:panGesture];
+    
+    self.layer.cornerRadius = 8;
+    self.layer.shadowRadius = 3;
+    self.layer.shadowOpacity = 0.2;
+    self.layer.shadowOffset = CGSizeMake(1, 1);
 }
 
 - (void)beingDragged:(UIPanGestureRecognizer*)gestureRecognizer
@@ -87,8 +92,6 @@
     else {
         self.mode = GGOverlayViewModeLeft;
     }
-
-    self.alpha = MIN(fabs(distance) / 100, 0.4);
 }
 
 - (void)afterSwipeAction
@@ -104,7 +107,6 @@
                          animations:^{
                              self.center = self.originalPoint;
                              self.transform = CGAffineTransformMakeRotation(0);
-                             self.alpha = 0;
                          }];
     }
 }
