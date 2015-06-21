@@ -11,7 +11,7 @@
 @implementation DraggableViewBackground {
     NSInteger cardsLoadedIndex;
     NSMutableArray* loadedCards;
-    CGRect cardBaseFrame;
+    CGRect mainFrame;
 }
 
 static const int MAX_BUFFER_SIZE = 5;
@@ -22,7 +22,7 @@ static const int MAX_BUFFER_SIZE = 5;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    cardBaseFrame = frame;
+    mainFrame = frame;
     if (self) {
         [super layoutSubviews];
         exampleCardLabels = [[NSArray alloc] initWithObjects:@"first", @"second", @"third", @"fourth", @"last", nil];
@@ -63,8 +63,8 @@ static const int MAX_BUFFER_SIZE = 5;
 
 - (CardView*)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CardView* cardView = [[CardView alloc] init];
-    cardView.center = CGPointMake(0, 0);
+    CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    [cardView layoutIfNeeded];
     return cardView;
 }
 

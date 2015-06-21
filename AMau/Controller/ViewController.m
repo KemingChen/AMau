@@ -19,7 +19,9 @@
 {
     [super viewDidLoad];
 
-    CGRect frame = self.baseCard.frame;
+    [self.view layoutIfNeeded];
+    CGRect frame = self.mainContainer.frame;
+    NSLog(@"%f %f %f %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     DraggableViewBackground* draggableBackground = [[DraggableViewBackground alloc] initWithFrame:frame];
     [self.mainContainer addSubview:draggableBackground];
 }
