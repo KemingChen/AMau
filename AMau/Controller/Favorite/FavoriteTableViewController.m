@@ -64,7 +64,7 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
 #pragma mark - Table View Delegate
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return 150;
+    return 100;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath

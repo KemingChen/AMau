@@ -24,9 +24,7 @@
 - (void)assignAMau:(Amau*)aMau
 {
     [self.photoImageView setImageWithURL:[NSURL URLWithString:aMau.photoUrl] placeholderImage:[UIImage imageNamed:@"loading"]];
-    [self.titleLabel setText:aMau.title];
     [self.nameLabel setText:aMau.name];
-    [self.liveLabel setText:aMau.live];
     [self.contactLabel setText:aMau.contact];
 }
 
