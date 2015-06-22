@@ -19,7 +19,7 @@
 @implementation CardView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
-    
+
     Amau* aMauItem;
 }
 
@@ -60,7 +60,7 @@
     [self.nameLabel setText:aMau.name];
     [self.liveLabel setText:aMau.live];
     [self.descriptionLabel setText:aMau.desc];
-    
+
     aMauItem = aMau;
 }
 
