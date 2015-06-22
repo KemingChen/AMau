@@ -12,6 +12,7 @@
 @interface CardModalView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
+
 - (void)assignItem:(Amau*)aMau;
 
 @end
