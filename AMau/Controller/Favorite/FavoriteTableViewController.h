@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavoriteTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FavoriteTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *favoriteTable;
 
 - (IBAction)clickBackButton:(id)sender;

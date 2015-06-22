@@ -45,6 +45,24 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)clickDeleteAllButton:(id)sender
+{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"刪除所有已存喜愛列表" message:@"您確定要刪除嗎？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"確定", nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        for (Amau* item in likeItems) {
+            item.isLikeValue = FALSE;
+        }
+        [Amau save];
+        [likeItems removeAllObjects];
+        [self clickBackButton:nil];
+    }
+}
+
 - (IBAction)clickBackButton:(id)sender
 {
     [self dismissViewControllerAnimated:YES

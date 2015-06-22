@@ -163,11 +163,26 @@
                                                     <action selector="clickBackButton:" destination="u9F-E6-Avw" eventType="touchUpInside" id="jYy-qi-GiE"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mby-LJ-qpp" userLabel="DeleteAllButton">
+                                                <rect key="frame" x="282" y="12" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="BfR-uy-hpA"/>
+                                                    <constraint firstAttribute="height" constant="30" id="z0D-On-U5A"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="delete_all">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickDeleteAllButton:" destination="u9F-E6-Avw" eventType="touchUpInside" id="DwY-I8-LAQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="zgs-RB-R4v" firstAttribute="leading" secondItem="csE-DZ-6B1" secondAttribute="trailing" constant="5" id="8mH-mV-p7g"/>
+                                            <constraint firstAttribute="bottom" secondItem="mby-LJ-qpp" secondAttribute="bottom" constant="8" id="9B1-lT-lgL"/>
                                             <constraint firstItem="csE-DZ-6B1" firstAttribute="leading" secondItem="u1o-3D-d3v" secondAttribute="leading" constant="5" id="Eb8-sx-Viy"/>
                                             <constraint firstAttribute="bottom" secondItem="csE-DZ-6B1" secondAttribute="bottom" constant="8" id="P9w-ux-uE4"/>
+                                            <constraint firstAttribute="trailing" secondItem="mby-LJ-qpp" secondAttribute="trailing" constant="8" id="TXA-cP-mtJ"/>
                                             <constraint firstAttribute="trailing" secondItem="zgs-RB-R4v" secondAttribute="trailing" constant="55" id="aMC-0y-h3d"/>
                                             <constraint firstAttribute="bottom" secondItem="zgs-RB-R4v" secondAttribute="bottom" constant="5" id="wwA-7U-2tW"/>
                                         </constraints>
@@ -228,5 +243,6 @@
         <image name="button_dislike" width="68" height="56"/>
         <image name="button_favorite" width="35" height="35"/>
         <image name="button_like" width="68" height="56"/>
+        <image name="delete_all" width="128" height="128"/>
     </resources>
 </document>
