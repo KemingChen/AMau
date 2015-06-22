@@ -1,21 +1,21 @@
 //
-//  ViewController.m
+//  MainController.m
 //  AMau
 //
 //  Created by Keming on 2015/6/21.
 //  Copyright (c) 2015年 NTUT-IOS. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainController.h"
 #import "DraggableViewBackground.h"
 
-@interface ViewController () {
+@interface MainController () {
     DraggableViewBackground* draggableBackground;
 }
 
 @end
 
-@implementation ViewController
+@implementation MainController
 
 - (void)viewDidLoad
 {
