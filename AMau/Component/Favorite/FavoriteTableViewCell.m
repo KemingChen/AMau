@@ -7,17 +7,27 @@
 //
 
 #import "FavoriteTableViewCell.h"
+#import <UIImageView+AFNetworking.h>
 
 @implementation FavoriteTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)assignAMau:(Amau*)aMau
+{
+    [self.photoImageView setImageWithURL:[NSURL URLWithString:aMau.photoUrl] placeholderImage:[UIImage imageNamed:@"loading"]];
+    [self.titleLabel setText:aMau.title];
+    [self.nameLabel setText:aMau.name];
+    [self.liveLabel setText:aMau.live];
+    [self.contactLabel setText:aMau.contact];
 }
 
 @end

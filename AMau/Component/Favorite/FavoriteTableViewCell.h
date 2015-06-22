@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Amau.h"
 
 @interface FavoriteTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView* photoImageView;
+@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel* nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel* liveLabel;
+@property (weak, nonatomic) IBOutlet UILabel* contactLabel;
+
+- (void)assignAMau:(Amau*)aMau;
 
 @end

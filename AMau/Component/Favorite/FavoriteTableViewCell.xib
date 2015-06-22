@@ -78,7 +78,14 @@
                     <constraint firstAttribute="trailingMargin" secondItem="nbI-YY-Ps5" secondAttribute="trailing" constant="4" id="zge-Vy-HdN"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="298" y="351.5"/>
+            <connections>
+                <outlet property="contactLabel" destination="lpo-Uq-BZ9" id="qPn-ke-LLG"/>
+                <outlet property="liveLabel" destination="nbI-YY-Ps5" id="zC1-UG-z24"/>
+                <outlet property="nameLabel" destination="PJu-VS-Ykd" id="HwP-1Q-FA5"/>
+                <outlet property="photoImageView" destination="VAX-BC-Vj1" id="HZ7-1M-Ci5"/>
+                <outlet property="titleLabel" destination="YsO-BX-CKv" id="XlE-ga-DGA"/>
+            </connections>
+            <point key="canvasLocation" x="389" y="330.5"/>
         </tableViewCell>
     </objects>
 </document>
