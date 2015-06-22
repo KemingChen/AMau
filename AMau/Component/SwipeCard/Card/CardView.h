@@ -41,6 +41,6 @@ typedef NS_ENUM(NSUInteger, GGOverlayViewMode) {
 - (void)leftClickAction;
 - (void)rightClickAction;
 
-- (void)assignData:(Amau*)Amau;
+- (void)assignData:(Amau*)aMau;
 
 @end

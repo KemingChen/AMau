@@ -14,6 +14,7 @@
 #define ROTATION_ANGLE M_PI / 8
 
 #import "CardView.h"
+#import <UIImageView+AFNetworking.h>
 
 @implementation CardView {
     CGFloat xFromCenter;
@@ -49,8 +50,14 @@
     self.dislikeImageView.hidden = YES;
 }
 
-- (void)assignData:(Amau*)Amau;
+- (void)assignData:(Amau*)aMau;
 {
+    [self.titleLabel setText:aMau.title];
+    [self.photoImageView setImageWithURL:[NSURL URLWithString:aMau.photoUrl] placeholderImage:[UIImage imageNamed:@"loading"]];
+    [self.locationLabel setText:aMau.location];
+    [self.nameLabel setText:aMau.name];
+    [self.liveLabel setText:aMau.live];
+    [self.descriptionLabel setText:aMau.desc];
 }
 
 - (void)beingDragged:(UIPanGestureRecognizer*)gestureRecognizer
