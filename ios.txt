@@ -1,0 +1,18 @@
+// 使用的元件
+UIPanGestureRecognizer
+AFNetworking
+MagicRecord
+Core Data
+Mogenerator
+UIAlertView
+iToast
+UITableView
+Custom UITableViewCell
+UITableViewRowAction
+
+// 沒有用元件，但是自己做出效果
+Custom Modal View
+
+// 技術面
+Custom Delegate
+Load Xib File

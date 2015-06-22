@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7F27D5481B386307003B143E /* CardModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27D5471B386307003B143E /* CardModalView.m */; };
 		7F27D54A1B38631E003B143E /* CardModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D5491B38631E003B143E /* CardModalView.xib */; };
+		7F27D5601B38863B003B143E /* AMau_logo_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D55D1B38863B003B143E /* AMau_logo_29.png */; };
+		7F27D5611B38863B003B143E /* AMau_logo_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D55E1B38863B003B143E /* AMau_logo_58.png */; };
+		7F27D5621B38863B003B143E /* AMau_logo_87.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D55F1B38863B003B143E /* AMau_logo_87.png */; };
 		7FD599AA1B36D8500033D53D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599A91B36D8500033D53D /* main.m */; };
 		7FD599AD1B36D8500033D53D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599AC1B36D8500033D53D /* AppDelegate.m */; };
 		7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599AE1B36D8500033D53D /* AMau.xcdatamodeld */; };
@@ -47,6 +50,9 @@
 		7F27D5461B386307003B143E /* CardModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardModalView.h; path = Modal/CardModalView.h; sourceTree = "<group>"; };
 		7F27D5471B386307003B143E /* CardModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardModalView.m; path = Modal/CardModalView.m; sourceTree = "<group>"; };
 		7F27D5491B38631E003B143E /* CardModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardModalView.xib; path = Modal/CardModalView.xib; sourceTree = "<group>"; };
+		7F27D55D1B38863B003B143E /* AMau_logo_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo_29.png; sourceTree = "<group>"; };
+		7F27D55E1B38863B003B143E /* AMau_logo_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo_58.png; sourceTree = "<group>"; };
+		7F27D55F1B38863B003B143E /* AMau_logo_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo_87.png; sourceTree = "<group>"; };
 		7FD599A41B36D8500033D53D /* AMau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD599A81B36D8500033D53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD599A91B36D8500033D53D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 		7FD599A71B36D8500033D53D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F27D55D1B38863B003B143E /* AMau_logo_29.png */,
+				7F27D55E1B38863B003B143E /* AMau_logo_58.png */,
+				7F27D55F1B38863B003B143E /* AMau_logo_87.png */,
 				7FD599A81B36D8500033D53D /* Info.plist */,
 				7FD599A91B36D8500033D53D /* main.m */,
 			);
@@ -373,7 +382,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F27D5611B38863B003B143E /* AMau_logo_58.png in Resources */,
+				7F27D5621B38863B003B143E /* AMau_logo_87.png in Resources */,
 				7FD59A091B37D1B70033D53D /* Podfile in Resources */,
+				7F27D5601B38863B003B143E /* AMau_logo_29.png in Resources */,
 				7FD599B61B36D8500033D53D /* Main.storyboard in Resources */,
 				7F27D54A1B38631E003B143E /* CardModalView.xib in Resources */,
 				7FD599BB1B36D8500033D53D /* LaunchScreen.xib in Resources */,
