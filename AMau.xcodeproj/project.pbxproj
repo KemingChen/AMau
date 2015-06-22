@@ -23,6 +23,9 @@
 		7FD59A061B37CFFB0033D53D /* FavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A041B37CFFB0033D53D /* FavoriteTableViewCell.m */; };
 		7FD59A071B37CFFB0033D53D /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */; };
 		7FD59A091B37D1B70033D53D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7FD59A081B37D1B70033D53D /* Podfile */; };
+		7FD59A0D1B37D2FE0033D53D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A0B1B37D2FE0033D53D /* Model.xcdatamodeld */; };
+		7FD59A141B37D4CB0033D53D /* Amau.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A101B37D4CB0033D53D /* Amau.m */; };
+		7FD59A151B37D4CB0033D53D /* _Amau.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A131B37D4CB0033D53D /* _Amau.m */; };
 		DDD2A861866794A3368BF3AE /* libPods-AMau.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE573F500664063A9A314C /* libPods-AMau.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,11 @@
 		7FD59A041B37CFFB0033D53D /* FavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewCell.m; path = Favorite/FavoriteTableViewCell.m; sourceTree = "<group>"; };
 		7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteTableViewCell.xib; path = Favorite/FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		7FD59A081B37D1B70033D53D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7FD59A0C1B37D2FE0033D53D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7FD59A0F1B37D4CB0033D53D /* Amau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Amau.h; sourceTree = "<group>"; };
+		7FD59A101B37D4CB0033D53D /* Amau.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amau.m; sourceTree = "<group>"; };
+		7FD59A121B37D4CB0033D53D /* _Amau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Amau.h; sourceTree = "<group>"; };
+		7FD59A131B37D4CB0033D53D /* _Amau.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Amau.m; sourceTree = "<group>"; };
 		C0BE573F500664063A9A314C /* libPods-AMau.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AMau.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,6 +220,7 @@
 		7FD599FE1B37CEEF0033D53D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7FD59A0A1B37D2E70033D53D /* Model */,
 				7FD599FF1B37CF120033D53D /* DataProvider.h */,
 				7FD59A001B37CF120033D53D /* DataProvider.m */,
 			);
@@ -226,6 +235,36 @@
 				7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */,
 			);
 			name = Favorite;
+			sourceTree = "<group>";
+		};
+		7FD59A0A1B37D2E70033D53D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FD59A0E1B37D4CB0033D53D /* Human */,
+				7FD59A111B37D4CB0033D53D /* Machine */,
+				7FD59A0B1B37D2FE0033D53D /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7FD59A0E1B37D4CB0033D53D /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				7FD59A0F1B37D4CB0033D53D /* Amau.h */,
+				7FD59A101B37D4CB0033D53D /* Amau.m */,
+			);
+			name = Human;
+			path = Core/Model/Human;
+			sourceTree = "<group>";
+		};
+		7FD59A111B37D4CB0033D53D /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				7FD59A121B37D4CB0033D53D /* _Amau.h */,
+				7FD59A131B37D4CB0033D53D /* _Amau.m */,
+			);
+			name = Machine;
+			path = Core/Model/Machine;
 			sourceTree = "<group>";
 		};
 		D2B7C0F7B31FAD9204838769 /* Frameworks */ = {
@@ -381,8 +420,11 @@
 				7FD599AD1B36D8500033D53D /* AppDelegate.m in Sources */,
 				7FD599D41B36D91C0033D53D /* MainController.m in Sources */,
 				7FD59A061B37CFFB0033D53D /* FavoriteTableViewCell.m in Sources */,
+				7FD59A0D1B37D2FE0033D53D /* Model.xcdatamodeld in Sources */,
 				7FD59A011B37CF120033D53D /* DataProvider.m in Sources */,
+				7FD59A151B37D4CB0033D53D /* _Amau.m in Sources */,
 				7FD599AA1B36D8500033D53D /* main.m in Sources */,
+				7FD59A141B37D4CB0033D53D /* Amau.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +644,17 @@
 			);
 			currentVersion = 7FD599AF1B36D8500033D53D /* AMau.xcdatamodel */;
 			path = AMau.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		7FD59A0B1B37D2FE0033D53D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FD59A0C1B37D2FE0033D53D /* Model.xcdatamodel */,
+			);
+			currentVersion = 7FD59A0C1B37D2FE0033D53D /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Core/Model/Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

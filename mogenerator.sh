@@ -1,0 +1,1 @@
+mogenerator --human-dir AMau/Core/Model/Human --machine-dir AMau/Core/Model/Machine --model AMau/Core/Model/Model.xcdatamodeld --template-var arc=true
