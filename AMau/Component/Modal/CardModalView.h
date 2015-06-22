@@ -11,7 +11,7 @@
 
 @interface CardModalView : UIView
 
-- (IBAction)clickCloseButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 - (void)assignItem:(Amau*)aMau;
 
 @end

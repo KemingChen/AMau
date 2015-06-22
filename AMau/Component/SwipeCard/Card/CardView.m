@@ -21,6 +21,7 @@
     CGFloat yFromCenter;
 
     Amau* aMauItem;
+    UIPanGestureRecognizer* panGesture;
 }
 
 @synthesize delegate;
@@ -40,7 +41,7 @@
 
 - (void)setup
 {
-    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(beingDragged:)];
+    panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(beingDragged:)];
     [self addGestureRecognizer:panGesture];
 
     self.layer.cornerRadius = 8;
@@ -50,6 +51,11 @@
 
     self.likeImageView.hidden = YES;
     self.dislikeImageView.hidden = YES;
+}
+
+- (void)disableSwipeCardEvent
+{
+    [self removeGestureRecognizer:panGesture];
 }
 
 - (void)setAMauItem:(Amau*)aMau
