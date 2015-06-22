@@ -35,12 +35,11 @@ typedef NS_ENUM(NSUInteger, GGOverlayViewMode) {
 
 @property (weak) id<DraggableViewDelegate> delegate;
 @property (nonatomic) GGOverlayViewMode mode;
-
 @property (nonatomic) CGPoint originalPoint;
 
 - (void)leftClickAction;
 - (void)rightClickAction;
-
-- (void)assignData:(Amau*)aMau;
+- (void)setAMauItem:(Amau*)aMau;
+- (Amau*)getAMauItem;
 
 @end

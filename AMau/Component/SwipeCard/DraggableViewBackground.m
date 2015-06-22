@@ -73,11 +73,12 @@ static const int MAX_BUFFER_SIZE = 5;
 
 - (CardView*)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CGFloat cardWidth = mainFrame.size.width - 50 * 2;
-    CGFloat cardHeight = mainFrame.size.height - 50 - 150;
-    CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake((mainFrame.size.width - cardWidth) / 2.0f, 50 - mainFrame.origin.y, cardWidth, cardHeight)];
+    CGFloat padding = 20;
+    CGFloat cardWidth = mainFrame.size.width - padding * 2;
+    CGFloat cardHeight = mainFrame.size.height - padding - 130;
+    CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake((mainFrame.size.width - cardWidth) / 2.0f, padding - mainFrame.origin.y, cardWidth, cardHeight)];
     cardView.delegate = self;
-    [cardView assignData:items[index]];
+    [cardView setAMauItem:items[index]];
     return cardView;
 }
 
@@ -94,6 +95,7 @@ static const int MAX_BUFFER_SIZE = 5;
 
 - (void)cardSwipedRight:(UIView*)card
 {
+    NSLog(@"%@", [[loadedCards firstObject] getAMauItem]);
     [loadedCards removeObjectAtIndex:0];
 
     if (cardsLoadedIndex < [allCards count]) {

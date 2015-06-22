@@ -19,6 +19,8 @@
 @implementation CardView {
     CGFloat xFromCenter;
     CGFloat yFromCenter;
+    
+    Amau* aMauItem;
 }
 
 @synthesize delegate;
@@ -50,7 +52,7 @@
     self.dislikeImageView.hidden = YES;
 }
 
-- (void)assignData:(Amau*)aMau;
+- (void)setAMauItem:(Amau*)aMau
 {
     [self.titleLabel setText:aMau.title];
     [self.photoImageView setImageWithURL:[NSURL URLWithString:aMau.photoUrl] placeholderImage:[UIImage imageNamed:@"loading"]];
@@ -58,6 +60,13 @@
     [self.nameLabel setText:aMau.name];
     [self.liveLabel setText:aMau.live];
     [self.descriptionLabel setText:aMau.desc];
+    
+    aMauItem = aMau;
+}
+
+- (Amau*)getAMauItem
+{
+    return aMauItem;
 }
 
 - (void)beingDragged:(UIPanGestureRecognizer*)gestureRecognizer
