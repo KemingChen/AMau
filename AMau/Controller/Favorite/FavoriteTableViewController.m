@@ -34,6 +34,22 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     [self setupModalView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (likeItems.count > 0) {
+        self.favoriteTable.hidden = NO;
+    }
+    else {
+        self.favoriteTable.hidden = YES;
+        
+        iToast* toast = [iToast makeText:NSLocalizedString(@"目前沒有資料唷，快按 ← 回去增加吧!!!", @"")];
+        [toast setGravity:iToastGravityBottom];
+        [toast setDuration:iToastDurationNormal];
+        [toast show];
+    }
+}
+
 - (void)setupModalView
 {
     modelView = [[CardModalView alloc] initWithFrame:self.view.frame];
@@ -60,7 +76,7 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
         }
         [Amau save];
         [likeItems removeAllObjects];
-        iToast *toast = [iToast makeText:NSLocalizedString(@"已清除所有喜愛列表", @"")];
+        iToast* toast = [iToast makeText:NSLocalizedString(@"已清除所有喜愛列表", @"")];
         [toast setGravity:iToastGravityBottom];
         [toast setDuration:iToastDurationLong];
         [toast show];
