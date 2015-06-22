@@ -67,10 +67,10 @@
                                 <rect key="frame" x="0.0" y="70" width="320" height="498"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyS-I7-tdd" userLabel="DislikeButton">
-                                        <rect key="frame" x="60" y="393" width="56" height="55"/>
+                                        <rect key="frame" x="60" y="392" width="68" height="56"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="56" id="C06-dS-CLg"/>
-                                            <constraint firstAttribute="height" constant="55" id="rXO-xK-WmD"/>
+                                            <constraint firstAttribute="width" constant="68" id="C06-dS-CLg"/>
+                                            <constraint firstAttribute="height" constant="56" id="rXO-xK-WmD"/>
                                         </constraints>
                                         <state key="normal" image="button_dislike">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-LU-FcJ" userLabel="LikeButton">
-                                        <rect key="frame" x="204" y="393" width="56" height="55"/>
+                                        <rect key="frame" x="192" y="392" width="68" height="56"/>
                                         <state key="normal" image="button_like">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -124,8 +124,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_dislike" width="56" height="55"/>
+        <image name="button_dislike" width="68" height="56"/>
         <image name="button_favorite" width="35" height="35"/>
-        <image name="button_like" width="56" height="55"/>
+        <image name="button_like" width="68" height="56"/>
     </resources>
 </document>
