@@ -42,7 +42,7 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     }
     else {
         self.favoriteTable.hidden = YES;
-        
+
         iToast* toast = [iToast makeText:NSLocalizedString(@"目前沒有資料唷，快按 ← 回去增加吧!!!", @"")];
         [toast setGravity:iToastGravityBottom];
         [toast setDuration:iToastDurationNormal];
@@ -133,6 +133,9 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     [likeItems removeObject:aMau];
     [Amau save];
     [tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
+    if (likeItems.count == 0) {
+        tableView.hidden = YES;
+    }
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
