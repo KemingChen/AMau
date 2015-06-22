@@ -33,6 +33,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="clickFavoriteListButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pjP-Uw-BFD"/>
+                                                    <segue destination="u9F-E6-Avw" kind="show" id="E7l-RQ-zZf"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="看 看 這 些 貓 ^^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-qF-t6z" userLabel="Title">
@@ -54,7 +55,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="tdR-oH-Kzj" firstAttribute="leading" secondItem="HR6-4e-cmf" secondAttribute="leading" id="Iad-3j-5Tz"/>
                                     <constraint firstItem="tdR-oH-Kzj" firstAttribute="top" secondItem="HR6-4e-cmf" secondAttribute="top" constant="20" id="ZYu-EH-t3G"/>
@@ -120,10 +121,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="304"/>
+            <point key="canvasLocation" x="445" y="236"/>
+        </scene>
+        <!--FavoriteListViewController-->
+        <scene sceneID="5TY-Vp-P3m">
+            <objects>
+                <viewController id="u9F-E6-Avw" userLabel="FavoriteListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O26-Nk-rYB"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Ne-uo-bEa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HwP-zZ-rpD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opb-Im-fXT" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-3D-d3v" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜愛列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgs-RB-R4v" userLabel="Title">
+                                                <rect key="frame" x="55" y="5" width="210" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="hZU-Yu-13H"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csE-DZ-6B1" userLabel="Back">
+                                                <rect key="frame" x="5" y="7" width="45" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="Szo-bg-xLT"/>
+                                                    <constraint firstAttribute="height" constant="35" id="bgH-3L-MVn"/>
+                                                </constraints>
+                                                <state key="normal" image="button_back">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zgs-RB-R4v" firstAttribute="leading" secondItem="csE-DZ-6B1" secondAttribute="trailing" constant="5" id="8mH-mV-p7g"/>
+                                            <constraint firstItem="csE-DZ-6B1" firstAttribute="leading" secondItem="u1o-3D-d3v" secondAttribute="leading" constant="5" id="Eb8-sx-Viy"/>
+                                            <constraint firstAttribute="bottom" secondItem="csE-DZ-6B1" secondAttribute="bottom" constant="8" id="P9w-ux-uE4"/>
+                                            <constraint firstAttribute="trailing" secondItem="zgs-RB-R4v" secondAttribute="trailing" constant="55" id="aMC-0y-h3d"/>
+                                            <constraint firstAttribute="bottom" secondItem="zgs-RB-R4v" secondAttribute="bottom" constant="5" id="wwA-7U-2tW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="u1o-3D-d3v" firstAttribute="leading" secondItem="Opb-Im-fXT" secondAttribute="leading" id="2sz-d4-St0"/>
+                                    <constraint firstAttribute="height" constant="70" id="8cq-SP-F5f"/>
+                                    <constraint firstItem="u1o-3D-d3v" firstAttribute="top" secondItem="Opb-Im-fXT" secondAttribute="top" constant="20" id="K8a-8q-lrU"/>
+                                    <constraint firstAttribute="trailing" secondItem="u1o-3D-d3v" secondAttribute="trailing" id="aF2-5f-rsa"/>
+                                    <constraint firstAttribute="bottom" secondItem="u1o-3D-d3v" secondAttribute="bottom" id="gzl-z0-NLc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awz-A6-IdK" userLabel="MainContainer">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Opb-Im-fXT" firstAttribute="top" secondItem="O26-Nk-rYB" secondAttribute="bottom" constant="-20" id="8Dn-t7-7h8"/>
+                            <constraint firstItem="3Ne-uo-bEa" firstAttribute="top" secondItem="awz-A6-IdK" secondAttribute="bottom" id="DC4-IF-nvz"/>
+                            <constraint firstAttribute="trailing" secondItem="Opb-Im-fXT" secondAttribute="trailing" id="FaM-lM-mYh"/>
+                            <constraint firstAttribute="trailing" secondItem="awz-A6-IdK" secondAttribute="trailing" id="LYf-Bv-LCd"/>
+                            <constraint firstItem="awz-A6-IdK" firstAttribute="leading" secondItem="HwP-zZ-rpD" secondAttribute="leading" id="PQz-wB-Hix"/>
+                            <constraint firstItem="awz-A6-IdK" firstAttribute="top" secondItem="Opb-Im-fXT" secondAttribute="bottom" id="eRY-nM-36m"/>
+                            <constraint firstItem="Opb-Im-fXT" firstAttribute="leading" secondItem="HwP-zZ-rpD" secondAttribute="leading" id="wdD-o3-Hcb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfz-bm-scB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="236"/>
         </scene>
     </scenes>
     <resources>
+        <image name="button_back" width="45" height="35"/>
         <image name="button_dislike" width="68" height="56"/>
         <image name="button_favorite" width="35" height="35"/>
         <image name="button_like" width="68" height="56"/>
