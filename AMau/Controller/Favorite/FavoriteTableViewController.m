@@ -10,9 +10,11 @@
 #import "FavoriteTableViewCell.h"
 #import "DataProvider.h"
 #import "Amau.h"
+#import "CardModalView.h"
 
 @interface FavoriteTableViewController () {
     NSMutableArray* likeItems;
+    CardModalView* modelView;
 }
 
 @end
@@ -28,6 +30,14 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
 
     UINib* nib = [UINib nibWithNibName:CellIdentitier bundle:nil];
     [self.favoriteTable registerNib:nib forCellReuseIdentifier:CellIdentitier];
+    [self setupModalView];
+}
+
+- (void)setupModalView
+{
+    modelView = [[CardModalView alloc] initWithFrame:self.view.frame];
+    [modelView setHidden:YES];
+    [self.view addSubview:modelView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,9 +96,11 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     [tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    
+    Amau* aMau = likeItems[indexPath.row];
+    [modelView assignItem:aMau];
+    [modelView setHidden:NO];
 }
 
 @end
