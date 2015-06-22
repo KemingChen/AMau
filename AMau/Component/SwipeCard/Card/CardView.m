@@ -153,7 +153,7 @@
             [self removeFromSuperview];
         }];
 
-    [delegate cardSwipedRight:self];
+    [delegate cardSwipedRight:aMauItem.identity];
 
     NSLog(@"YES");
 }
@@ -169,7 +169,7 @@
             [self removeFromSuperview];
         }];
 
-    [delegate cardSwipedLeft:self];
+    [delegate cardSwipedLeft:aMauItem.identity];
 
     NSLog(@"NO");
 }
@@ -208,7 +208,7 @@
             [self removeFromSuperview];
         }];
 
-    [delegate cardSwipedRight:self];
+    [delegate cardSwipedRight:aMauItem.identity];
 
     NSLog(@"YES");
 }
@@ -225,7 +225,7 @@
             [self removeFromSuperview];
         }];
 
-    [delegate cardSwipedLeft:self];
+    [delegate cardSwipedLeft:aMauItem.identity];
 
     NSLog(@"NO");
 }

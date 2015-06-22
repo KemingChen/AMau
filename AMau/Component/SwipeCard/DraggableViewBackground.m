@@ -82,25 +82,31 @@ static const int MAX_BUFFER_SIZE = 2;
     return cardView;
 }
 
-- (void)cardSwipedLeft:(UIView*)card;
+- (void)addCardLoadedIndex
+{
+    cardsLoadedIndex = (cardsLoadedIndex + 1) % [allCards count];
+}
+
+- (void)cardSwipedLeft:(NSNumber*)identity;
 {
     [loadedCards removeObjectAtIndex:0];
 
     if (cardsLoadedIndex < [allCards count]) {
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        cardsLoadedIndex++;
+        [self addCardLoadedIndex];
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 2)]];
     }
 }
 
-- (void)cardSwipedRight:(UIView*)card
+- (void)cardSwipedRight:(NSNumber*)identity
 {
-    NSLog(@"%@", [[loadedCards firstObject] getAMauItem]);
     [loadedCards removeObjectAtIndex:0];
+
+    [[DataProvider sharedProvider] moveToLikeItems:identity];
 
     if (cardsLoadedIndex < [allCards count]) {
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        cardsLoadedIndex++;
+        [self addCardLoadedIndex];
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 2)]];
     }
 }

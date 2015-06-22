@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Amau.h"
 
 @interface DataProvider : NSObject
 
@@ -16,5 +17,6 @@
 - (NSMutableArray*)likeItems;
 
 - (void)syncFromServer:(void (^)(bool success))complete;
+- (void)moveToLikeItems:(NSNumber*)identity;
 
 @end

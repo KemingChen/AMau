@@ -42,12 +42,15 @@ FinishCallback callback = nil;
 {
     NSArray* array = [NSMutableArray arrayWithArray:[Amau MR_findAllSortedBy:@"identity" ascending:false inContext:[NSManagedObjectContext MR_defaultContext]]];
 
-    items = [[NSMutableArray alloc] initWithArray:array];
-
+    items = [[NSMutableArray alloc] init];
     likeItems = [[NSMutableArray alloc] init];
-    for (Amau* aMau in items) {
+    
+    for (Amau* aMau in array) {
         if (aMau.isLikeValue) {
             [likeItems addObject:aMau];
+        }
+        else{
+            [items addObject:aMau];
         }
     }
 }
@@ -60,6 +63,18 @@ FinishCallback callback = nil;
 - (NSMutableArray*)items
 {
     return items;
+}
+
+- (void)moveToLikeItems:(NSNumber*)identity
+{
+    for (Amau* item in items) {
+        if ([item.identity isEqualToNumber:identity]) {
+            [likeItems addObject:item];
+            item.isLikeValue = TRUE;
+            break;
+        }
+    }
+    [Amau save];
 }
 
 - (void)updateItems:(NSArray*)itemJSONArray

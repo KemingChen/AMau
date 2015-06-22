@@ -24,7 +24,7 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    likeItems = [[DataProvider sharedProvider] items];
+    likeItems = [[DataProvider sharedProvider] likeItems];
 
     UINib* nib = [UINib nibWithNibName:CellIdentitier bundle:nil];
     [self.favoriteTable registerNib:nib forCellReuseIdentifier:CellIdentitier];
@@ -79,7 +79,10 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
 
 - (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    [likeItems removeObjectAtIndex:indexPath.row];
+    Amau* aMau = likeItems[indexPath.row];
+    aMau.isLikeValue = FALSE;
+    [likeItems removeObject:aMau];
+    [Amau save];
     [tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
 }
 

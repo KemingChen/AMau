@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F27D5371B384BD9003B143E /* AMau_logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D5341B384BD9003B143E /* AMau_logo1.png */; };
-		7F27D5381B384BD9003B143E /* AMau_logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D5351B384BD9003B143E /* AMau_logo2.png */; };
-		7F27D5391B384BD9003B143E /* AMau_logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F27D5361B384BD9003B143E /* AMau_logo3.png */; };
 		7FD599AA1B36D8500033D53D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599A91B36D8500033D53D /* main.m */; };
 		7FD599AD1B36D8500033D53D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599AC1B36D8500033D53D /* AppDelegate.m */; };
 		7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599AE1B36D8500033D53D /* AMau.xcdatamodeld */; };
@@ -45,9 +42,6 @@
 /* Begin PBXFileReference section */
 		162496E5569E82ACB76D0A60 /* Pods-AMau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMau.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMau/Pods-AMau.release.xcconfig"; sourceTree = "<group>"; };
 		7D7057459B2DF04A98B5CBC8 /* Pods-AMau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMau.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMau/Pods-AMau.debug.xcconfig"; sourceTree = "<group>"; };
-		7F27D5341B384BD9003B143E /* AMau_logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo1.png; sourceTree = "<group>"; };
-		7F27D5351B384BD9003B143E /* AMau_logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo2.png; sourceTree = "<group>"; };
-		7F27D5361B384BD9003B143E /* AMau_logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMau_logo3.png; sourceTree = "<group>"; };
 		7FD599A41B36D8500033D53D /* AMau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD599A81B36D8500033D53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD599A91B36D8500033D53D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,9 +146,6 @@
 		7FD599A71B36D8500033D53D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7F27D5341B384BD9003B143E /* AMau_logo1.png */,
-				7F27D5351B384BD9003B143E /* AMau_logo2.png */,
-				7F27D5361B384BD9003B143E /* AMau_logo3.png */,
 				7FD599A81B36D8500033D53D /* Info.plist */,
 				7FD599A91B36D8500033D53D /* main.m */,
 			);
@@ -369,12 +360,9 @@
 				7FD59A091B37D1B70033D53D /* Podfile in Resources */,
 				7FD599B61B36D8500033D53D /* Main.storyboard in Resources */,
 				7FD599BB1B36D8500033D53D /* LaunchScreen.xib in Resources */,
-				7F27D5371B384BD9003B143E /* AMau_logo1.png in Resources */,
 				7FD59A071B37CFFB0033D53D /* FavoriteTableViewCell.xib in Resources */,
 				7FD599EB1B36F2260033D53D /* CardView.xib in Resources */,
-				7F27D5391B384BD9003B143E /* AMau_logo3.png in Resources */,
 				7FD599B81B36D8500033D53D /* Images.xcassets in Resources */,
-				7F27D5381B384BD9003B143E /* AMau_logo2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
