@@ -13,6 +13,7 @@
 + (DataProvider*)sharedProvider;
 
 - (NSMutableArray*)items;
+- (NSMutableArray*)likeItems;
 
 - (void)syncFromServer:(void (^)(bool success))complete;
 

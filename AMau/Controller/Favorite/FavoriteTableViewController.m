@@ -8,9 +8,11 @@
 
 #import "FavoriteTableViewController.h"
 #import "FavoriteTableViewCell.h"
+#import "DataProvider.h"
+#import "Amau.h"
 
 @interface FavoriteTableViewController () {
-    NSMutableArray* checkIns;
+    NSMutableArray* likeItems;
 }
 
 @end
@@ -20,6 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    likeItems = [[DataProvider sharedProvider] likeItems];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,13 +40,12 @@
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
-    return checkIns.count;
+    return likeItems.count;
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray* days = checkIns[section];
-    return days.count;
+    return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -93,17 +95,8 @@
 
 - (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    NSMutableArray* day = checkIns[indexPath.section];
-
-    if (day.count > 1) {
-        [day removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
-        [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else {
-        [checkIns removeObjectAtIndex:indexPath.section];
-        [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-    }
+    [likeItems removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 @end

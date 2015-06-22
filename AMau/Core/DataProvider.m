@@ -20,6 +20,7 @@ static NSString* dataUrl = @"http://140.124.181.190/Test/data.json";
 int postCheckInIdentity = 1000;
 
 NSMutableArray* items = nil;
+NSMutableArray* likeItems = nil;
 FinishCallback callback = nil;
 
 + (DataProvider*)sharedProvider
@@ -42,6 +43,18 @@ FinishCallback callback = nil;
     NSArray* array = [NSMutableArray arrayWithArray:[Amau MR_findAllSortedBy:@"identity" ascending:false inContext:[NSManagedObjectContext MR_defaultContext]]];
 
     items = [[NSMutableArray alloc] initWithArray:array];
+
+    likeItems = [[NSMutableArray alloc] init];
+    for (Amau* aMau in items) {
+        if (aMau.isLikeValue) {
+            [likeItems addObject:aMau];
+        }
+    }
+}
+
+- (NSMutableArray*)likeItems
+{
+    return likeItems;
 }
 
 - (NSMutableArray*)items

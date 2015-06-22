@@ -16,6 +16,7 @@
     }
     else {
         aMau = [Amau MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
+        aMau.isLikeValue = FALSE;
     }
 
     aMau.identityValue = identity;

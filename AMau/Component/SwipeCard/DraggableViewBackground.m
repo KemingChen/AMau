@@ -15,7 +15,7 @@
     CGRect mainFrame;
 }
 
-static const int MAX_BUFFER_SIZE = 5;
+static const int MAX_BUFFER_SIZE = 2;
 
 @synthesize items;
 @synthesize allCards;
