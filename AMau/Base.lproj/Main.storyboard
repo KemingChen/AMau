@@ -121,12 +121,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="236"/>
+            <point key="canvasLocation" x="251" y="226"/>
         </scene>
         <!--FavoriteListViewController-->
         <scene sceneID="5TY-Vp-P3m">
             <objects>
-                <viewController id="u9F-E6-Avw" userLabel="FavoriteListViewController" sceneMemberID="viewController">
+                <viewController id="u9F-E6-Avw" userLabel="FavoriteListViewController" customClass="FavoriteTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O26-Nk-rYB"/>
                         <viewControllerLayoutGuide type="bottom" id="3Ne-uo-bEa"/>
@@ -159,6 +159,9 @@
                                                 <state key="normal" image="button_back">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clickBackButton:" destination="u9F-E6-Avw" eventType="touchUpInside" id="jYy-qi-GiE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -181,6 +184,18 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awz-A6-IdK" userLabel="MainContainer">
                                 <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-3B-B4r" userLabel="FavoriteTable">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
+                                        <color key="backgroundColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dBb-3B-B4r" firstAttribute="leading" secondItem="awz-A6-IdK" secondAttribute="leading" id="6yJ-aS-vFG"/>
+                                    <constraint firstItem="dBb-3B-B4r" firstAttribute="top" secondItem="awz-A6-IdK" secondAttribute="top" id="93o-2G-a20"/>
+                                    <constraint firstAttribute="bottom" secondItem="dBb-3B-B4r" secondAttribute="bottom" id="asu-hY-ibS"/>
+                                    <constraint firstAttribute="trailing" secondItem="dBb-3B-B4r" secondAttribute="trailing" id="bZG-fJ-ubs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
@@ -198,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfz-bm-scB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811" y="236"/>
+            <point key="canvasLocation" x="637" y="226"/>
         </scene>
     </scenes>
     <resources>

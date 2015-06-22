@@ -18,7 +18,10 @@
 		7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599DA1B36DFB20033D53D /* DraggableViewBackground.m */; };
 		7FD599EB1B36F2260033D53D /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD599EA1B36F2260033D53D /* CardView.xib */; };
 		7FD599EE1B36F25A0033D53D /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599ED1B36F25A0033D53D /* CardView.m */; };
-		7FD599FC1B37C7600033D53D /* FavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599FA1B37C7600033D53D /* FavoriteListViewController.m */; };
+		7FD599FC1B37C7600033D53D /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD599FA1B37C7600033D53D /* FavoriteTableViewController.m */; };
+		7FD59A011B37CF120033D53D /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A001B37CF120033D53D /* DataProvider.m */; };
+		7FD59A061B37CFFB0033D53D /* FavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD59A041B37CFFB0033D53D /* FavoriteTableViewCell.m */; };
+		7FD59A071B37CFFB0033D53D /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +54,13 @@
 		7FD599EA1B36F2260033D53D /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = Card/CardView.xib; sourceTree = "<group>"; };
 		7FD599EC1B36F25A0033D53D /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Card/CardView.h; sourceTree = "<group>"; };
 		7FD599ED1B36F25A0033D53D /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Card/CardView.m; sourceTree = "<group>"; };
-		7FD599F91B37C7600033D53D /* FavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteListViewController.h; path = Favorite/FavoriteListViewController.h; sourceTree = "<group>"; };
-		7FD599FA1B37C7600033D53D /* FavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteListViewController.m; path = Favorite/FavoriteListViewController.m; sourceTree = "<group>"; };
+		7FD599F91B37C7600033D53D /* FavoriteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteTableViewController.h; path = Favorite/FavoriteTableViewController.h; sourceTree = "<group>"; };
+		7FD599FA1B37C7600033D53D /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewController.m; path = Favorite/FavoriteTableViewController.m; sourceTree = "<group>"; };
+		7FD599FF1B37CF120033D53D /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataProvider.h; path = Core/DataProvider.h; sourceTree = "<group>"; };
+		7FD59A001B37CF120033D53D /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataProvider.m; path = Core/DataProvider.m; sourceTree = "<group>"; };
+		7FD59A031B37CFFB0033D53D /* FavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteTableViewCell.h; path = Favorite/FavoriteTableViewCell.h; sourceTree = "<group>"; };
+		7FD59A041B37CFFB0033D53D /* FavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewCell.m; path = Favorite/FavoriteTableViewCell.m; sourceTree = "<group>"; };
+		7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoriteTableViewCell.xib; path = Favorite/FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		7FD599A61B36D8500033D53D /* AMau */ = {
 			isa = PBXGroup;
 			children = (
+				7FD599FE1B37CEEF0033D53D /* Core */,
 				7FD599D51B36DFB20033D53D /* Component */,
 				7FD599D11B36D91C0033D53D /* Controller */,
 				7FD599AB1B36D8500033D53D /* AppDelegate.h */,
@@ -146,6 +155,7 @@
 		7FD599D51B36DFB20033D53D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7FD59A021B37CFC30033D53D /* Favorite */,
 				7FD599D61B36DFB20033D53D /* SwipeCard */,
 			);
 			path = Component;
@@ -174,8 +184,27 @@
 		7FD599F81B37C71C0033D53D /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				7FD599F91B37C7600033D53D /* FavoriteListViewController.h */,
-				7FD599FA1B37C7600033D53D /* FavoriteListViewController.m */,
+				7FD599F91B37C7600033D53D /* FavoriteTableViewController.h */,
+				7FD599FA1B37C7600033D53D /* FavoriteTableViewController.m */,
+			);
+			name = Favorite;
+			sourceTree = "<group>";
+		};
+		7FD599FE1B37CEEF0033D53D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7FD599FF1B37CF120033D53D /* DataProvider.h */,
+				7FD59A001B37CF120033D53D /* DataProvider.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7FD59A021B37CFC30033D53D /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				7FD59A031B37CFFB0033D53D /* FavoriteTableViewCell.h */,
+				7FD59A041B37CFFB0033D53D /* FavoriteTableViewCell.m */,
+				7FD59A051B37CFFB0033D53D /* FavoriteTableViewCell.xib */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -262,6 +291,7 @@
 			files = (
 				7FD599B61B36D8500033D53D /* Main.storyboard in Resources */,
 				7FD599BB1B36D8500033D53D /* LaunchScreen.xib in Resources */,
+				7FD59A071B37CFFB0033D53D /* FavoriteTableViewCell.xib in Resources */,
 				7FD599EB1B36F2260033D53D /* CardView.xib in Resources */,
 				7FD599B81B36D8500033D53D /* Images.xcassets in Resources */,
 			);
@@ -282,11 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FD599DE1B36DFB20033D53D /* DraggableViewBackground.m in Sources */,
-				7FD599FC1B37C7600033D53D /* FavoriteListViewController.m in Sources */,
+				7FD599FC1B37C7600033D53D /* FavoriteTableViewController.m in Sources */,
 				7FD599B01B36D8500033D53D /* AMau.xcdatamodeld in Sources */,
 				7FD599EE1B36F25A0033D53D /* CardView.m in Sources */,
 				7FD599AD1B36D8500033D53D /* AppDelegate.m in Sources */,
 				7FD599D41B36D91C0033D53D /* MainController.m in Sources */,
+				7FD59A061B37CFFB0033D53D /* FavoriteTableViewCell.m in Sources */,
+				7FD59A011B37CF120033D53D /* DataProvider.m in Sources */,
 				7FD599AA1B36D8500033D53D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

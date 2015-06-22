@@ -1,5 +1,5 @@
 //
-//  FavoriteListViewController.h
+//  FavoriteTableViewCell.h
 //  AMau
 //
 //  Created by Keming on 2015/6/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavoriteListViewController : UIViewController
+@interface FavoriteTableViewCell : UITableViewCell
 
 @end

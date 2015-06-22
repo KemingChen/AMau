@@ -23,7 +23,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2X-tr-gjl" userLabel="Photo">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="z2X-tr-gjl" userLabel="Photo">
                             <rect key="frame" x="8" y="38" width="254" height="159"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </imageView>
@@ -128,6 +128,7 @@
         </view>
     </objects>
     <resources>
+        <image name="loading" width="360" height="203"/>
         <image name="slide_dislike" width="105" height="57"/>
         <image name="slide_like" width="105" height="57"/>
     </resources>
