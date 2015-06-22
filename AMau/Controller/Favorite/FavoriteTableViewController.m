@@ -11,6 +11,7 @@
 #import "DataProvider.h"
 #import "Amau.h"
 #import "CardModalView.h"
+#import <iToast/iToast.h>
 
 @interface FavoriteTableViewController () {
     NSMutableArray* likeItems;
@@ -59,6 +60,10 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
         }
         [Amau save];
         [likeItems removeAllObjects];
+        iToast *toast = [iToast makeText:NSLocalizedString(@"已清除所有喜愛列表", @"")];
+        [toast setGravity:iToastGravityBottom];
+        [toast setDuration:iToastDurationLong];
+        [toast show];
         [self clickBackButton:nil];
     }
 }
