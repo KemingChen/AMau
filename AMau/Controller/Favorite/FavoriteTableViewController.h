@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FavoriteTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *favoriteTable;
 
 - (IBAction)clickBackButton:(id)sender;
 

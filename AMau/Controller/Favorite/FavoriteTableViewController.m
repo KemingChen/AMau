@@ -19,10 +19,15 @@
 
 @implementation FavoriteTableViewController
 
+static NSString* CellIdentitier = @"FavoriteTableViewCell";
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    likeItems = [[DataProvider sharedProvider] likeItems];
+    likeItems = [[DataProvider sharedProvider] items];
+
+    UINib* nib = [UINib nibWithNibName:CellIdentitier bundle:nil];
+    [self.favoriteTable registerNib:nib forCellReuseIdentifier:CellIdentitier];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,24 +45,18 @@
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
-    return likeItems.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return likeItems.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    static NSString* CellIdentitier = @"FavoriteCell";
     FavoriteTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentitier forIndexPath:indexPath];
-
-    assert([cell isKindOfClass:[FavoriteTableViewCell class]]);
-
-    //    NSArray* day = checkIns[indexPath.section];
-    //    CheckIn* checkIn = day[indexPath.row];
-    //    [cell setCheckIn:checkIn];
+    [cell assignAMau:likeItems[indexPath.row]];
 
     return cell;
 }
@@ -65,22 +64,7 @@
 #pragma mark - Table View Delegate
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    static FavoriteTableViewCell* cell = nil;
-
-    if (cell == nil) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"FavoriteCell"];
-    }
-
-    [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
-
-    //    NSArray* day = checkIns[indexPath.section];
-    //    CheckIn* checkIn = day[indexPath.row];
-    //    [cell setCheckIn:checkIn];
-
-    [cell layoutIfNeeded];
-    [tableView layoutIfNeeded];
-    //    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;
-    return 100;
+    return 150;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath

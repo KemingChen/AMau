@@ -188,6 +188,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-3B-B4r" userLabel="FavoriteTable">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                                         <color key="backgroundColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="u9F-E6-Avw" id="xYN-wN-hPe"/>
+                                            <outlet property="delegate" destination="u9F-E6-Avw" id="hfa-b1-hFj"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -210,6 +214,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="favoriteTable" destination="dBb-3B-B4r" id="cd0-jD-lSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfz-bm-scB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
