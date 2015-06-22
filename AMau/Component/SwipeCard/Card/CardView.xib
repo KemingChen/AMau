@@ -124,7 +124,7 @@
                 <outlet property="photoImageView" destination="z2X-tr-gjl" id="7T9-qB-CEr"/>
                 <outlet property="titleLabel" destination="B8C-qG-uPy" id="5Bp-Ib-nSe"/>
             </connections>
-            <point key="canvasLocation" x="363.5" y="313.5"/>
+            <point key="canvasLocation" x="312" y="307"/>
         </view>
     </objects>
     <resources>

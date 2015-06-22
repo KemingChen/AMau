@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Amau.h"
 
 @protocol DraggableViewDelegate <NSObject>
 
@@ -40,6 +41,6 @@ typedef NS_ENUM(NSUInteger, GGOverlayViewMode) {
 - (void)leftClickAction;
 - (void)rightClickAction;
 
-- (void)assignData;
+- (void)assignData:(Amau*)Amau;
 
 @end

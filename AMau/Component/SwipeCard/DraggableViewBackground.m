@@ -7,6 +7,7 @@
 //
 
 #import "DraggableViewBackground.h"
+#import "DataProvider.h"
 
 @implementation DraggableViewBackground {
     NSInteger cardsLoadedIndex;
@@ -14,9 +15,9 @@
     CGRect mainFrame;
 }
 
-static const int MAX_BUFFER_SIZE = 2;
+static const int MAX_BUFFER_SIZE = 5;
 
-@synthesize exampleCardLabels;
+@synthesize items;
 @synthesize allCards;
 
 - (id)initWithFrame:(CGRect)frame
@@ -25,22 +26,31 @@ static const int MAX_BUFFER_SIZE = 2;
     mainFrame = frame;
     if (self) {
         [super layoutSubviews];
-        exampleCardLabels = [[NSArray alloc] initWithObjects:@"first", @"second", @"third", @"fourth", @"last", nil];
-        loadedCards = [[NSMutableArray alloc] init];
-        allCards = [[NSMutableArray alloc] init];
-        cardsLoadedIndex = 0;
 
-        [self loadCards];
+        [[DataProvider sharedProvider] syncFromServer:^(bool success) {
+            [self syncDataComplete:success];
+        }];
     }
     return self;
 }
 
+- (void)syncDataComplete:(bool)success
+{
+    if (success) {
+        items = [[DataProvider sharedProvider] items];
+        loadedCards = [[NSMutableArray alloc] init];
+        allCards = [[NSMutableArray alloc] init];
+        cardsLoadedIndex = 0;
+        [self loadCards];
+    }
+}
+
 - (void)loadCards
 {
-    if ([exampleCardLabels count] > 0) {
-        NSInteger numLoadedCardsCap = (([exampleCardLabels count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : [exampleCardLabels count]);
+    if ([items count] > 0) {
+        NSInteger numLoadedCardsCap = (([items count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : [items count]);
 
-        for (int i = 0; i < [exampleCardLabels count]; i++) {
+        for (int i = 0; i < [items count]; i++) {
             CardView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
 
@@ -67,7 +77,7 @@ static const int MAX_BUFFER_SIZE = 2;
     CGFloat cardHeight = mainFrame.size.height - 50 - 150;
     CardView* cardView = [[CardView alloc] initWithFrame:CGRectMake((mainFrame.size.width - cardWidth) / 2.0f, 50 - mainFrame.origin.y, cardWidth, cardHeight)];
     cardView.delegate = self;
-    [cardView assignData];
+    [cardView assignData:items[index]];
     return cardView;
 }
 

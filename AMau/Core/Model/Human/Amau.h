@@ -1,5 +1,9 @@
 #import "_Amau.h"
+#import <MagicalRecord.h>
 
 @interface Amau : _Amau {}
-// Custom logic goes here.
+
++ (Amau*)aMauWithIdentity:(NSInteger)identity;
++ (void)save;
+
 @end

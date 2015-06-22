@@ -49,7 +49,7 @@
     self.dislikeImageView.hidden = YES;
 }
 
-- (void)assignData
+- (void)assignData:(Amau*)Amau;
 {
 }
 

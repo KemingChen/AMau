@@ -10,4 +10,10 @@
 
 @interface DataProvider : NSObject
 
++ (DataProvider*)sharedProvider;
+
+- (NSMutableArray*)items;
+
+- (void)syncFromServer:(void (^)(bool success))complete;
+
 @end
