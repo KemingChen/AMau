@@ -50,6 +50,11 @@ static NSString* CellIdentitier = @"FavoriteTableViewCell";
     }
 }
 
+- (BOOL)shouldAutorotate
+{
+    return FALSE;
+}
+
 - (void)setupModalView
 {
     modelView = [[CardModalView alloc] initWithFrame:self.view.frame];

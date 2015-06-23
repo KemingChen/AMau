@@ -34,6 +34,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return FALSE;
+}
+
 - (IBAction)clickFavoriteListButton:(id)sender
 {
     NSLog(@"Favorite");
