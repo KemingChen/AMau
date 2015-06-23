@@ -44,12 +44,12 @@ FinishCallback callback = nil;
 
     items = [[NSMutableArray alloc] init];
     likeItems = [[NSMutableArray alloc] init];
-    
+
     for (Amau* aMau in array) {
         if (aMau.isLikeValue) {
             [likeItems addObject:aMau];
         }
-        else{
+        else {
             [items addObject:aMau];
         }
     }
@@ -85,7 +85,7 @@ FinishCallback callback = nil;
         aMau.title = item[@"title"];
         aMau.name = item[@"name"];
         aMau.location = item[@"location"];
-        aMau.live = item[@"live"];
+        aMau.live = [NSString stringWithFormat:@"  %@  ", item[@"live"]];
         aMau.desc = item[@"description"];
         aMau.photoUrl = item[@"photo"];
         aMau.contact = item[@"contact"];
