@@ -53,6 +53,7 @@ FinishCallback callback = nil;
             [items addObject:aMau];
         }
     }
+    NSLog(@"items count: %d", [items count]);
 }
 
 - (NSMutableArray*)likeItems

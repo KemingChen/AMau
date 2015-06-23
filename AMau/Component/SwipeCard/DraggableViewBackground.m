@@ -38,15 +38,16 @@ static const int MAX_BUFFER_SIZE = 2;
 {
     if (success) {
         items = [[DataProvider sharedProvider] items];
-        loadedCards = [[NSMutableArray alloc] init];
-        allCards = [[NSMutableArray alloc] init];
-        cardsLoadedIndex = 0;
         [self loadCards];
     }
 }
 
 - (void)loadCards
 {
+    loadedCards = [[NSMutableArray alloc] init];
+    allCards = [[NSMutableArray alloc] init];
+    cardsLoadedIndex = 0;
+
     if ([items count] > 0) {
         NSInteger numLoadedCardsCap = (([items count] > MAX_BUFFER_SIZE) ? MAX_BUFFER_SIZE : [items count]);
 
@@ -57,6 +58,10 @@ static const int MAX_BUFFER_SIZE = 2;
             if (i < numLoadedCardsCap) {
                 [loadedCards addObject:newCard];
             }
+        }
+
+        for (UIView* subview in self.subviews) {
+            [subview removeFromSuperview];
         }
 
         for (int i = 0; i < [loadedCards count]; i++) {
@@ -82,32 +87,36 @@ static const int MAX_BUFFER_SIZE = 2;
     return cardView;
 }
 
-- (void)addCardLoadedIndex
-{
-    cardsLoadedIndex = (cardsLoadedIndex + 1) % [allCards count];
-}
-
 - (void)cardSwipedLeft:(NSNumber*)identity;
 {
-    [loadedCards removeObjectAtIndex:0];
+    [self removeLoadedCardWithItemIdentity:identity];
 
     if (cardsLoadedIndex < [allCards count]) {
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        [self addCardLoadedIndex];
+        cardsLoadedIndex++;
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 2)]];
     }
 }
 
 - (void)cardSwipedRight:(NSNumber*)identity
 {
-    [loadedCards removeObjectAtIndex:0];
-
+    [self removeLoadedCardWithItemIdentity:identity];
     [[DataProvider sharedProvider] moveToLikeItems:identity];
 
     if (cardsLoadedIndex < [allCards count]) {
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
-        [self addCardLoadedIndex];
+        cardsLoadedIndex++;
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE - 2)]];
+    }
+}
+
+- (void)removeLoadedCardWithItemIdentity:(NSNumber*)identity
+{
+    for (CardView* cardView in loadedCards) {
+        if ([cardView.getAMauItem.identity isEqualToNumber:identity]) {
+            [loadedCards removeObject:cardView];
+            break;
+        }
     }
 }
 
