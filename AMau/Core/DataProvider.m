@@ -15,7 +15,7 @@
 typedef void (^FinishCallback)(bool success);
 
 static DataProvider* dataProvider = nil;
-static NSString* dataUrl = @"http://140.124.181.190/Test/data.json";
+static NSString* dataUrl = @"http://140.124.181.190/www/getAmauInfo.php";
 
 int postCheckInIdentity = 1000;
 
@@ -53,7 +53,6 @@ FinishCallback callback = nil;
             [items addObject:aMau];
         }
     }
-    NSLog(@"items count: %d", [items count]);
 }
 
 - (NSMutableArray*)likeItems
