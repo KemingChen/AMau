@@ -1,18 +1,31 @@
 // 使用的元件
-UIPanGestureRecognizer
+[NEW] UIPanGestureRecognizer
+	卡片手勢辨識
 AFNetworking
+	讀取伺服器上阿貓的資訊
 MagicRecord
+	CoreData的輔助套件
 Core Data
+	快取從伺服器下載的阿貓資訊，還有使用者已存的喜愛列表
 Mogenerator
+	CoreData的輔助套件
 UIAlertView
+	提示使用者是否確定要刪除所有喜愛列表
 iToast
+	提示使用者已經完成清除所有喜愛列表
 UITableView
+	顯示喜愛列表
 Custom UITableViewCell
+	顯示喜愛列表中的阿貓認養資訊
 UITableViewRowAction
+	個別刪除喜愛列表上的阿貓資訊
 
 // 沒有用元件，但是自己做出效果
-Custom Modal View
+[New] Custom Modal View
+	在喜愛列表上，顯示阿貓的詳細資訊
 
 // 技術面
-Custom Delegate
-Load Xib File
+[NEW] Custom Delegate
+	讓Controller註冊卡片事件，讓卡片能夠主動通知Controller變更Model
+[HALF_NEW] Load Xib File
+	用在設計卡片、客製化的TableViewCell
