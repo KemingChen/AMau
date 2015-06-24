@@ -15,11 +15,11 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"IOS_AMau.sqlite"];
+    [NSThread sleepForTimeInterval:1.5];
     return YES;
 }
 
